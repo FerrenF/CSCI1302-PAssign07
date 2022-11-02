@@ -1,0 +1,10 @@
+.root { -fx-background-color: transparent; }
+#root-pane{
+    -fx-background-image: url('phone.png');
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-color:transparent;
+}
+#keypad-pane{
+	
+}
