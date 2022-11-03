@@ -8,7 +8,8 @@
  * Oh my god I regret this. I didn't have time to make a polished, finished project;
  * we got MEMES, and that is what matters.
  * 
- * SC can be used to quit out of this: doubt that I had the time to program a real exit button. all the budget went to memes.
+ * ESC can be used to quit out of this relatively simply app: I didn't have time to make the side buttons work.
+ * If I did make them work, I would probably use mouse detection events, cursor positions, and css to create pseudo buttons.
  * 
  * The only real function of this thing is to type fake phone numbers on the fake screen, 
  * and then flash and play piggy noises if you enter at least a single number. piggy sad face otherwise
@@ -36,19 +37,24 @@ import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import keypad.KeyPadPane;
 
+//We could create custom events here using EventHandler class, but we can also use interfaces.
 
 //Custom events that need to communicate between objects.
 interface peppaCalled {
+	//Fired when the enter button is hit on the keypad.
 	public void peppaCalledEvent(int blinks);
 }
 
 interface peppaType {
+	//Fired when something is typed on the keypad.
 	public void peppaTyped(String key);
 }
 
+
+//Begin of main class
 public class PAssign07 extends Application {
 
-	private static Dimension2D windowSize = new Dimension2D(292, 600);
+	private static final Dimension2D windowSize = new Dimension2D(292, 600);
 	private Point2D initDrag = new Point2D(0, 0);
 
 	
@@ -111,7 +117,8 @@ public class PAssign07 extends Application {
 			this.blinksLeft = blinks;
 			blinkTimer.start();
 		}
-
+		
+		//This method might be useless.
 		public void blinkStop() {
 			blinksLeft = 0;
 			blinkTimer.stop();
@@ -205,10 +212,10 @@ public class PAssign07 extends Application {
 			if (this.isInCall()) {
 				return;
 			}
-
 			beginCall();
 		}
 
+		//ahh, the beautiful source of peppa-pig.mp3
 		public void beginCall() {
 			boolean willCall=true;
 			if(this.getCurrentNumber().length()>0)
@@ -251,6 +258,8 @@ public class PAssign07 extends Application {
 			setPeppaNumber("");
 		}
 
+		
+		//format our string so it displays a number like an old flip phone
 		public void setPeppaNumber(String number) {
 			this.setCurrentNumber(number);
 			StringBuilder displayNumber = new StringBuilder();
@@ -320,7 +329,7 @@ public class PAssign07 extends Application {
 			initDrag = new Point2D(event.getSceneX(), event.getSceneY());
 		});
 
-		Scene base = new Scene(root, 292, 600);
+		Scene base = new Scene(root, windowSize.getHeight(), windowSize.getWidth());
 
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		base.setFill(Color.TRANSPARENT);
@@ -343,7 +352,9 @@ public class PAssign07 extends Application {
 
 	}
 
-	public static void main(String[] args) {
+	//Going to just leave this here. 
+	public static void main(String[] args) {		
+		System.out.println("Press ESC to exit.");		
 		launch(args);
 	}
 }
