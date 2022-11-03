@@ -31,7 +31,6 @@ import javafx.scene.text.Text;
 import java.io.File;
 import javax.swing.Timer;
 import javafx.application.*;
-import javafx.geometry.Dimension2D;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
@@ -77,8 +76,8 @@ public class PAssign07 extends Application {
 
 		@Override
 		public void registerEventHandlers() {
-			this.listButtons.forEach((node) -> {
-				node.onMouseClickedProperty().set((e) -> this.typeHandler.peppaTyped(node.getText()));
+			this.getChildren().forEach((node) -> {
+				node.onMouseClickedProperty().set((e) -> this.typeHandler.peppaTyped(((Button)node).getText()));
 				node.onMouseEnteredProperty().set((event) -> node.getStyleClass().add(0, "btn-over"));
 				node.onMouseExitedProperty().set((event) -> node.getStyleClass().remove("btn-over"));
 				node.onMousePressedProperty().set((event) -> node.getStyleClass().add(0, "btn-down"));
