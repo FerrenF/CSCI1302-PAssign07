@@ -4,7 +4,82 @@
     -fx-background-repeat: stretch;   
     -fx-background-position: center center;
     -fx-background-color:transparent;
+ 
 }
-#keypad-pane{
-	
+#peppa-screen-text {
+	-fx-font-size: 30px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-font-weight: 900;
+	-fx-text-alignment: center;
+}
+#peppa-screen-1 {
+	-fx-background-image: url('peppa-screen.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: 11 0;
+}
+#peppa-screen-2 {
+	-fx-background-image: url('peppa-screen.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: 11 -112;
+}
+#peppa-screen-3 {
+	-fx-background-image: url('peppa-screen.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: 11 -224;
+}
+#peppa-light-on {
+	-fx-background-image: url('phone-light.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: 85 0;
+}
+#peppa-light-off {
+	-fx-background-image: url('phone-light.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: 85 -53;
+}
+#peppa-pane > .button{
+	-fx-background-color: linear-gradient(from 25% 100% to 0% 0%, #aaa, #eee);
+	-fx-effect: dropshadow( one-pass-box , #EEEEEE , 2 , 0.0 , 2 , 0 );
+	-fx-font-size: 30px;
+	-fx-padding: -5 0 0 0;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-font-weight: 900;
+	-fx-text-fill: #05E;
+	-fx-max-width: 50px;
+    -fx-max-height:50px;
+    -fx-min-width: 10px;
+    -fx-min-height:10px;
+   
+}
+#peppa-pane > .btn-over{
+	-fx-cursor: hand;
+	-fx-background-color: linear-gradient(from 25% 100% to 0% 0%, #ccc, #fff);
+	-fx-effect: dropshadow( one-pass-box , #EEEEEE , 2 , 0.0 , 2 , 0 );  
+}
+#peppa-pane > .btn-down{
+	-fx-background-color: linear-gradient(from 25% 100% to 0% 0%, #eee, #fff);
+	-fx-effect: dropshadow( one-pass-box , #EEEEEE , 2 , 0.0 , 2 , 0 );  
+	-fx-font-size: 29px;
+}
+#peppa-button-enter{
+	-fx-min-width: 120px;
+	-fx-min-height: 42px;
+	-fx-background-image: url('enter-button.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+    -fx-background-position: -3 0;
+}
+#peppa-button-enter-over{
+	-fx-cursor: hand;
+	-fx-min-width: 120px;
+	-fx-min-height: 42px;
+	-fx-background-image: url('enter-button.png');
+    -fx-background-repeat: no-repeat no-repeat;   
+    -fx-background-color:transparent;
+	-fx-background-position: -3 -42;
 }
