@@ -54,7 +54,6 @@ interface peppaType {
 //Begin of main class
 public class PAssign07 extends Application {
 
-	private static final Dimension2D windowSize = new Dimension2D(292, 600);
 	private Point2D initDrag = new Point2D(0, 0);
 
 	
@@ -329,7 +328,7 @@ public class PAssign07 extends Application {
 			initDrag = new Point2D(event.getSceneX(), event.getSceneY());
 		});
 
-		Scene base = new Scene(root, windowSize.getHeight(), windowSize.getWidth());
+		Scene base = new Scene(root, 292,600);
 
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		base.setFill(Color.TRANSPARENT);
